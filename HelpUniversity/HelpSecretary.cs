@@ -10,13 +10,8 @@ namespace Secretary
 {
     internal class HelpSecretary
     {
-        private readonly string 
-        ConnectionString = "Server=.;Database=Gestionale;Trusted_Connection=True;";
-
-    
-
-    
-        
+        private readonly string
+        ConnectionString;
     public HelpSecretary(string connectionString)
     {
             ConnectionString = connectionString;
@@ -24,7 +19,7 @@ namespace Secretary
 
     public bool AddPerson(Person person)
     {
-        var sql = @"
+            var sql = @"
                    INSERT INTO [dbo].[Person]
             ([Name]
            ,[Surname]
@@ -32,11 +27,11 @@ namespace Secretary
            ,[Gender]
            ,[Address])
         VALUES
-           (<Name, nvarchar(100),>
-           ,<Surname, nvarchar(100),>
-           ,<BirthDay, datetime,>
-           ,<Gender, nvarchar(100),>
-           ,<Address, nvarchar(200),>)";
+           (@Name
+           ,@Surname
+           ,@BirthDay
+           ,@Gender
+           ,@Address)";
 
 
             using var connection = new SqlConnection(ConnectionString);
