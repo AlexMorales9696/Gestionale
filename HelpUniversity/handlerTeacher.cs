@@ -27,13 +27,13 @@ namespace Secretary
             return persister.AddTeacher(teacher);
 
         }
-        public bool InserisciTeacher1()
+        public bool InserisciTeacher2()
         {
             var teacher = new Teacher
             {
-                IdPerson = 3,
-                MatricolaTeacher = 123,
-                DataAssunzione = new DateTime(2022, 2, 1),
+                IdPerson = 5,
+                MatricolaTeacher = 12334,
+                DataAssunzione = new DateTime(2022, 1, 1),
 
 
 

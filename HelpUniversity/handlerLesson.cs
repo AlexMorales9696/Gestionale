@@ -18,8 +18,8 @@ namespace Secretary
         {
             var lesson = new Lesson
             {
-                IdTeacher = 0,
-                IdSubject=0,
+                IdTeacher = 2,
+                IdSubject=1,
             };
 
 

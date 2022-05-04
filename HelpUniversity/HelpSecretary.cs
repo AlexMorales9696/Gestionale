@@ -110,9 +110,9 @@ namespace Secretary
         public bool AddLesson(Lesson lesson)
         {
             var sql = @"
-                     INSERT INTO[dbo].[Lesson]
+                     INSERT INTO[dbo].[Lessons]
             ([IdTeacher]
-           ,[IdSubject] )
+             ,[IdSubject])
            
            
         VALUES
