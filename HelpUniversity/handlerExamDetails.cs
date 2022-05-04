@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using University;
+using People;
+using University;
 using People;
 
 namespace Secretary
 {
-    internal class hadlerStudent
+    internal class handlerExamDetails
     {
         private readonly string connectionString = "Server=ACADEMYNETPD09\\SQLEXPRESS;Database=Gestionale;Trusted_Connection=True;";
 
-        public bool InserisciStudent()
+        public bool aggiugniExamDetails()
         {
-            var student = new Student
+            var examdetails = new ExamDetails
             {
-                IdPerson = 3,
-                MatricolaStudent = 12323,
-                DataIscrizione = new DateTime(2018, 2, 1),
-
-
-
-
+                Idexam = 2,
+                IdStudent = 1,
             };
-            var persister = new HelpSecretary(connectionString);
-            return persister.AddStudent(student);
 
-        
+
+            var persister = new HelpSecretary(connectionString);
+            return persister.AddExamDetails(examdetails);
+
+        }
     }
-}
 }

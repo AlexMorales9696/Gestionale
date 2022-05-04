@@ -27,5 +27,21 @@ namespace Secretary
             return persister.AddTeacher(teacher);
 
         }
+        public bool InserisciTeacher1()
+        {
+            var teacher = new Teacher
+            {
+                IdPerson = 3,
+                MatricolaTeacher = 123,
+                DataAssunzione = new DateTime(2022, 2, 1),
+
+
+
+
+            };
+            var persister = new HelpSecretary(connectionString);
+            return persister.AddTeacher(teacher);
+
+        }
     }
 }

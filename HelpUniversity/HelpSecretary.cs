@@ -82,7 +82,7 @@ namespace Secretary
 
             return command.ExecuteNonQuery() > 0;
         }
-        /* public bool AddStudent(Student student)
+        public bool AddStudent(Student student)
          {
              var sql = @"
                      INSERT INTO[dbo].[Student]
@@ -101,13 +101,13 @@ namespace Secretary
              using var command = new SqlCommand(sql, connection);
              command.Parameters.AddWithValue("@IdPerson",student.IdPerson);
              command.Parameters.AddWithValue("@MatricolaStudent", student.MatricolaStudent);
-             command.Parameters.AddWithValue("@@DataIscrizione", student.DataIscrizione);
+             command.Parameters.AddWithValue("@DataIscrizione", student.DataIscrizione);
 
 
              return command.ExecuteNonQuery() > 0;
-         }*/
+         }
 
-        public bool AddClass(Lesson lesson)
+        public bool AddLesson(Lesson lesson)
         {
             var sql = @"
                      INSERT INTO[dbo].[Lesson]
@@ -123,8 +123,8 @@ namespace Secretary
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@IdPerson", lesson.IdTeacher);
-            command.Parameters.AddWithValue("@Matricola", lesson.IdSubject);
+            command.Parameters.AddWithValue("@IdTeacher", lesson.IdTeacher);
+            command.Parameters.AddWithValue("@IdSubject", lesson.IdSubject);
 
 
 
@@ -166,23 +166,85 @@ namespace Secretary
            ,[Hours])
            
         VALUES
-           (@IdStudent
-           ,@IdLesson 
+           (@Name
+           ,@Description
            ,@Credits
-           ,@Hours])";
+           ,@Hours)";
 
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@IdPerson",subject.IdStudent);
-            command.Parameters.AddWithValue("@Matricola", subject.Name);
-            command.Parameters.AddWithValue("@Matricola", subject.IdLess);
-            command.Parameters.AddWithValue("@Matricola", subject.IdLess);
+            command.Parameters.AddWithValue("@Name", subject.NameSubject);
+            command.Parameters.AddWithValue("@Description", subject.Description);
+            command.Parameters.AddWithValue("@Credits", subject.Crediti);
+            command.Parameters.AddWithValue("@Hours", subject.Hours);
+           
 
 
 
 
             return command.ExecuteNonQuery() > 0;
         }
+
+        public bool AddExam(Exam exam)
+        {
+            var sql = @"
+                     INSERT INTO[dbo].[Exam]
+            ([IdTeacher]
+           ,[Date]
+           ,[IdSubject])
+           
+           
+        VALUES
+           (@IdTeacher
+           ,@[Date
+           ,@IdSubject)";
+           
+
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Matricola", exam.Idteacher);
+            command.Parameters.AddWithValue("@Matricola", exam.DataExam);
+            command.Parameters.AddWithValue("@Matricola", exam.Idsubject);
+           
+
+
+
+
+
+            return command.ExecuteNonQuery() > 0;
+        }
+
+        public bool AddExamDetails(ExamDetails examdetails)
+        {
+            var sql = @"
+                     INSERT INTO[dbo].[ExamDetails]
+            ([IdExam]
+            ,[IdStudent])
+           
+           
+        VALUES
+           (@IdExam
+           ,@IdStudent)";
+       
+
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Matricola", examdetails.Idexam);
+            command.Parameters.AddWithValue("@Matricola", examdetails.IdStudent);
+
+
+
+
+
+
+            return command.ExecuteNonQuery() > 0;
+        }
+
+
+
+
     }
 }
