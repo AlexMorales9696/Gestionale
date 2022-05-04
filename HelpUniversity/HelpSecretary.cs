@@ -13,13 +13,13 @@ namespace Secretary
     {
         private readonly string
         ConnectionString;
-        public HelpSecretary(string connectionString)
-        {
+    public HelpSecretary(string connectionString)
+    {
             ConnectionString = connectionString;
         }
 
-        public bool AddPerson(Person person)
-        {
+    public bool AddPerson(Person person)
+    {
             var sql = @"
                    INSERT INTO [dbo].[Person]
             ([Name]
@@ -28,11 +28,11 @@ namespace Secretary
            ,[Gender]
            ,[Address])
         VALUES
-           (@Name
-           ,@Surname
-           ,@BirthDay
-           ,@Gender
-           ,@Address)";
+           (<Name, nvarchar(100),>
+           ,<Surname, nvarchar(100),>
+           ,<BirthDay, datetime,>
+           ,<Gender, nvarchar(100),>
+           ,<Address, nvarchar(200),>)";
 
 
             using var connection = new SqlConnection(ConnectionString);
