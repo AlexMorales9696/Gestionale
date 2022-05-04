@@ -54,8 +54,35 @@ subject5.InserireSubject5();*/
 
 //////////////////////////////////////////////////////
 
-var lesson = new handlerLesson();
+//AGGIUNTI  5 LESSON NEL DB
+/*var lesson = new handlerLesson();
 lesson.AggiugiLesson();
+
+var lesson2 = new handlerLesson();
+lesson2.AggiugiLesson2();
+
+var lesson3 = new handlerLesson();
+lesson3.AggiugiLesson3();
+
+var lesson4 = new handlerLesson();
+lesson4.AggiugiLesson4();
+
+var lesson5 = new handlerLesson();
+lesson5.AggiugiLesson5();*/
+////////////////////////////////////////////////////////////////////
+/* AGGIUNTI AL DB 3 CLASS 
+var class1 = new handlerClass();
+class1.AggiugiClass1();
+
+var class2 = new handlerClass();
+class2.AggiugiClass2();
+
+var class3 = new handlerClass();
+class3.AggiugiClass3();*/
+
+//////////////////////////////////////////
+
+
 
 
 

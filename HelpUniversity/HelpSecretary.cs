@@ -137,19 +137,18 @@ namespace Secretary
             var sql = @"
                      INSERT INTO[dbo].[Class]
             ([IdStudent]
-           ,[IdLesson]
-           ,[DataAssunzione])
+            ,[IdLesson])
            
         VALUES
            (@IdStudent
-           ,@IdLesson )";
+           ,@IdLesson)";
            
 
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@IdPerson", class1.IdStudent);
-            command.Parameters.AddWithValue("@Matricola", class1.IdLess);
+            command.Parameters.AddWithValue("@IdStudent", class1.IdStudent);
+            command.Parameters.AddWithValue("@IdLesson", class1.IdLess);
            
 
 
