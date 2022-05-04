@@ -28,11 +28,11 @@ namespace Secretary
            ,[Gender]
            ,[Address])
         VALUES
-           (<Name, nvarchar(100),>
-           ,<Surname, nvarchar(100),>
-           ,<BirthDay, datetime,>
-           ,<Gender, nvarchar(100),>
-           ,<Address, nvarchar(200),>)";
+           (@Name
+           ,@Surname
+           ,@BirthDay
+           ,@Gender
+           ,@Address)";
 
 
             using var connection = new SqlConnection(ConnectionString);
