@@ -1,7 +1,7 @@
 ﻿
 namespace University
 {
-    internal class Lesson
+    public class Lesson
     {
         public int IdLesson { get; set;}
         public int IdTeacher { get; set;}

@@ -10,21 +10,16 @@ namespace Secretary
 {
     internal class HelpSecretary
     {
-        private readonly string 
-        ConnectionString = "Server=.;Database=Gestionale;Trusted_Connection=True;";
-
-    
-
-    
-        
-    public HelpSecretary(string connectionString)
-    {
+        private readonly string
+        ConnectionString;
+        public HelpSecretary(string connectionString)
+        {
             ConnectionString = connectionString;
-    }
+        }
 
-    public bool AddPerson(Person person)
-    {
-        var sql = @"
+        public bool AddPerson(Person person)
+        {
+            var sql = @"
                    INSERT INTO [dbo].[Person]
             ([Name]
            ,[Surname]
@@ -32,11 +27,11 @@ namespace Secretary
            ,[Gender]
            ,[Address])
         VALUES
-           (<Name, nvarchar(100),>
-           ,<Surname, nvarchar(100),>
-           ,<BirthDay, datetime,>
-           ,<Gender, nvarchar(100),>
-           ,<Address, nvarchar(200),>)";
+           (@Name
+           ,@Surname
+           ,@BirthDay
+           ,@Gender
+           ,@Address)";
 
 
             using var connection = new SqlConnection(ConnectionString);
@@ -45,11 +40,11 @@ namespace Secretary
             command.Parameters.AddWithValue("@Name", person.Name);
             command.Parameters.AddWithValue("@Surname", person.Surname);
             command.Parameters.AddWithValue("@BirthDay", person.Birthday);
-            command.Parameters.AddWithValue("@Gender", person.Birthday);
-            command.Parameters.AddWithValue("@Address", person.Birthday);
+            command.Parameters.AddWithValue("@Gender", person.Gender);
+            command.Parameters.AddWithValue("@Address", person.Address);
 
             return command.ExecuteNonQuery() > 0;
         }
 
-}
+    }
 }

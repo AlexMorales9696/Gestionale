@@ -2,7 +2,7 @@
 
 namespace University
 {
-    internal class Subject
+       public  class Subject
     {
         public int IdSubject { get; set; }
         public int IdStudent { get; set; }

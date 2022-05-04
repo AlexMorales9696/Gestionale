@@ -8,7 +8,7 @@ namespace University
 {
     
 
-    internal class ExamDetails : Exam
+    public class ExamDetails : Exam
     {
         public int IdexamDetails { get; set; }
         public int IdStudent { get; set; }

@@ -10,9 +10,9 @@ namespace Secretary
     internal class handlerPerson
     {
 
-       
-        private readonly string connectionString = "Server=.;Database=Gestionale;Trusted_Connection=True;";
-      
+
+        private readonly string connectionString = "Server=ACADEMYNETPD09\\SQLEXPRESS;Database=Gestionale;Trusted_Connection=True;";
+
         public bool InserisciUnaPersona()
         {
             var person = new Person
@@ -21,10 +21,10 @@ namespace Secretary
                 Surname = "Verdi",
                 Birthday = new DateTime(1950, 4, 5),
                 Gender = "Male",
-                 Address = "Via Dante"
+                Address = "Via Dante"
 
 
-               
+
             };
             var persister = new HelpSecretary(connectionString);
             return persister.AddPerson(person);
