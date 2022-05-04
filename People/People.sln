@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "People", "People\People.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "University", "..\university\University.csproj", "{C40E8806-06B5-4D0C-8963-1F077A10973E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpUniversity", "..\HelpUniversity\HelpUniversity.csproj", "{56D90747-3CEB-42C1-8FCE-93438660601F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Secretary", "..\HelpUniversity\Secretary.csproj", "{56D90747-3CEB-42C1-8FCE-93438660601F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
