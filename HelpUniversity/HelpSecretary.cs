@@ -45,6 +45,17 @@ namespace Secretary
 
             return command.ExecuteNonQuery() > 0;
         }
+        public bool DeletePerona(int idperson)
+
+        {
+            var sql = @"DELETE FROM [dbo].[Person]
+                        WHERE Id=@Id ";
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@Id", 1);
+            return command.ExecuteNonQuery() > 0;
+        }
 
     }
 }

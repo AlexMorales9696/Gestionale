@@ -30,5 +30,15 @@ namespace Secretary
             return persister.AddPerson(person);
 
         }
+
+        public void CancellaUnaPersona(int Id)
+        {
+            var persister = new HelpSecretary(connectionString);
+            persister.DeletePerona(Id);
+        }
+
+
+
+
     }
 }
