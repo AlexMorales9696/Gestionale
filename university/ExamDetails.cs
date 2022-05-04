@@ -10,13 +10,11 @@ namespace University
 
     internal class ExamDetails : Exam
     {
-        public int IdexamDetails;
-        public int IdStudent;
-        public ExamDetails(int idexam, int idteacher, int idsubject, DateTime dataexam,int idexamdetails,int idstudent) :base( idexam,idteacher, idsubject, dataexam)
-        {
-            IdexamDetails = idexamdetails;
-            IdStudent = idstudent;
-        }
+        public int IdexamDetails { get; set; }
+        public int IdStudent { get; set; }
+        
+    
+      
             
 
 

@@ -8,12 +8,6 @@ namespace University
         public int IdStudent { get; set; }
         public int IdLesson { get; set; }
 
-        public Subject(int idsubject, int idstudent, int idlesson)
-        {
-            IdSubject = idsubject;
-            IdStudent = idstudent;
-            IdLesson = idlesson;
-
-        }
+        
     }
 }
