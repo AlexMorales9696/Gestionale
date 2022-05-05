@@ -131,7 +131,7 @@ var examdetails3 = new handlerExamDetails();
 examdetails3.aggiugniExamDetails3();
 
 var examdetails4 = new handlerExamDetails();
-examdetails4.aggiugniExamDetails4();
+examdetails4.aggiugniExamDetails4(); 
 
 var examdetails5 = new handlerExamDetails();
 examdetails5.aggiugniExamDetails5();*/
