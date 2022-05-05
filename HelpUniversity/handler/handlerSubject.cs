@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using University;
-using People;
+﻿using University;
+
 namespace Secretary
 {
-    internal class hanlerSubject
+    internal class handlerSubject
     {
         private readonly string connectionString = "Server=ACADEMYNETPD09\\SQLEXPRESS;Database=Gestionale;Trusted_Connection=True;";
 

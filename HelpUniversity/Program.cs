@@ -140,9 +140,9 @@ examdetails5.aggiugniExamDetails5();*/
 Console.WriteLine("**************************************************");
 Console.WriteLine("ecco le persone presenti nel db");
 
-var handler2 = new handlerRequestToSecretary();
-var personEnumerable2 = handler2.StampaLePersone();
-foreach (var item in personEnumerable2)
+var handlerPersone = new handlerRequestToSecretary();
+var people = handlerPersone.StampaLePersone();
+foreach (var item in people)
 {
     Console.WriteLine($"{item.Name} {item.Surname} {item.Birthday} {item.Gender} {item.Address} ");
 }
@@ -150,21 +150,22 @@ foreach (var item in personEnumerable2)
 
 
 Console.WriteLine("**************************************************");
-Console.WriteLine("Nomi e cognimi delle persone con il cognome rossi");
+Console.WriteLine("inserire il cognome delle peraone che cerchi");
+string cerca = Console.ReadLine();
 
-var handler = new handlerRequestToSecretary();
-var personEnumerable = handler.GetPersone("rossi");
-foreach (var item in personEnumerable)
+var handlerSurname = new handlerRequestToSecretary();
+var peopleSurname = handlerSurname.GetPersone(cerca);
+foreach (var item in peopleSurname)
 {
-    Console.WriteLine($"{item.Name} {item.Surname} ");
+    Console.WriteLine($"{item.Name} {item.Surname} {item.Birthday} {item.Gender} {item.Address} ");
 }
 
 Console.WriteLine("**************************************************");
 Console.WriteLine("Ecco i nomi dei Teacher");
 
-var handler1 = new handlerRequestToSecretary();
-var personEnumerable1 = handler1.GetTeacher();
-foreach (var item in personEnumerable1)
+var handlerTeacher = new handlerRequestToSecretary();
+var teachers= handlerTeacher.GetTeacher();
+foreach (var item in teachers)
 {
     Console.WriteLine($"{item.Name} {item.Surname} ");
 }
