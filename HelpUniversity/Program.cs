@@ -1,5 +1,5 @@
 ﻿using Secretary;
-using People;
+
 Console.WriteLine("hello");
 //////////////////////////////////////////////////////////
 /* 4 persone inserite nel DB
@@ -116,6 +116,15 @@ examdetails4.aggiugniExamDetails4();
 var examdetails5 = new handlerExamDetails();
 examdetails5.aggiugniExamDetails5();*/
 
+var handler = new handlerRequestToSecretary();
+
+var personEnumerable = handler.GetPersone("rossi");
+
+
+foreach (var item in personEnumerable)
+{
+    Console.WriteLine($"{item.Name} {item.Surname} ");
+}
 
 
 
