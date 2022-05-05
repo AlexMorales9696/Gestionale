@@ -81,7 +81,40 @@ var class3 = new handlerClass();
 class3.AggiugiClass3();*/
 
 //////////////////////////////////////////
+/* AGGIUNTI 5 EXAM NEL DATABSE
 
+var exam1 = new handlerExam();
+exam1.AggiugiExam1();
+
+var exam2 = new handlerExam();
+exam2.AggiugiExam2();
+
+var exam3 = new handlerExam();
+exam3.AggiugiExam3();
+
+var exam4 = new handlerExam();
+exam4.AggiugiExam4();
+
+var exam5 = new handlerExam();
+exam5.AggiugiExam5();*/
+
+/////////////////////////////////
+/* AGGIUNTI 8 DETTAGLI ESAMI
+
+var examdetails1 = new handlerExamDetails();
+examdetails1.aggiugniExamDetails1();
+
+var examdetails2 = new handlerExamDetails();
+examdetails2.aggiugniExamDetails2();
+
+var examdetails3 = new handlerExamDetails();
+examdetails3.aggiugniExamDetails3();
+
+var examdetails4 = new handlerExamDetails();
+examdetails4.aggiugniExamDetails4();
+
+var examdetails5 = new handlerExamDetails();
+examdetails5.aggiugniExamDetails5();*/
 
 
 

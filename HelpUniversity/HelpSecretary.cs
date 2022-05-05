@@ -196,16 +196,16 @@ namespace Secretary
            
         VALUES
            (@IdTeacher
-           ,@[Date
+           ,@Date
            ,@IdSubject)";
            
 
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@Matricola", exam.Idteacher);
-            command.Parameters.AddWithValue("@Matricola", exam.DataExam);
-            command.Parameters.AddWithValue("@Matricola", exam.Idsubject);
+            command.Parameters.AddWithValue("@IdTeacher", exam.Idteacher);
+            command.Parameters.AddWithValue("@Date", exam.DataExam);
+            command.Parameters.AddWithValue("@IdSubject", exam.Idsubject);
            
 
 
@@ -231,8 +231,8 @@ namespace Secretary
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@Matricola", examdetails.Idexam);
-            command.Parameters.AddWithValue("@Matricola", examdetails.IdStudent);
+            command.Parameters.AddWithValue("@IdExam", examdetails.Idexam);
+            command.Parameters.AddWithValue("@IdStudent", examdetails.IdStudent);
 
 
 
