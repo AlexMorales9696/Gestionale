@@ -131,12 +131,26 @@ var examdetails3 = new handlerExamDetails();
 examdetails3.aggiugniExamDetails3();
 
 var examdetails4 = new handlerExamDetails();
-examdetails4.aggiugniExamDetails4(); 
+examdetails4.aggiugniExamDetails4();
 
 var examdetails5 = new handlerExamDetails();
 examdetails5.aggiugniExamDetails5();*/
 
 
+Console.WriteLine("**************************************************");
+Console.WriteLine("ecco le persone presenti nel db");
+
+var handler2 = new handlerRequestToSecretary();
+var personEnumerable2 = handler2.StampaLePersone();
+foreach (var item in personEnumerable2)
+{
+    Console.WriteLine($"{item.Name} {item.Surname} {item.Birthday} {item.Gender} {item.Address} ");
+}
+
+
+
+Console.WriteLine("**************************************************");
+Console.WriteLine("Nomi e cognimi delle persone con il cognome rossi");
 
 var handler = new handlerRequestToSecretary();
 var personEnumerable = handler.GetPersone("rossi");
@@ -145,7 +159,7 @@ foreach (var item in personEnumerable)
     Console.WriteLine($"{item.Name} {item.Surname} ");
 }
 
-Console.WriteLine("******************************************************************");
+Console.WriteLine("**************************************************");
 Console.WriteLine("Ecco i nomi dei Teacher");
 
 var handler1 = new handlerRequestToSecretary();

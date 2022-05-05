@@ -16,7 +16,7 @@ namespace Secretary
             var student = new Student
             {
                 IdPerson = 3,
-                MatricolaStudent = 12323,
+                MatricolaStudent = "12323",
                 DataIscrizione = new DateTime(2018, 2, 1),
 
 
@@ -33,7 +33,7 @@ namespace Secretary
             var student = new Student
             {
                 IdPerson = 2,
-                MatricolaStudent = 987,
+                MatricolaStudent = "987",
                 DataIscrizione = new DateTime(2017, 2, 1),
 
 
@@ -51,7 +51,7 @@ namespace Secretary
             var student = new Student
             {
                 IdPerson = 4,
-                MatricolaStudent = 98712,
+                MatricolaStudent = "98712",
                 DataIscrizione = new DateTime(2015, 2, 1),
 
 
@@ -69,7 +69,7 @@ namespace Secretary
             var student = new Student
             {
                 IdPerson = 5,
-                MatricolaStudent = 98211,
+                MatricolaStudent = "98211",
                 DataIscrizione = new DateTime(2022, 4, 1),
 
 
@@ -87,7 +87,7 @@ namespace Secretary
             var student = new Student
             {
                 IdPerson = 6,
-                MatricolaStudent = 29372,
+                MatricolaStudent = "29372",
                 DataIscrizione = new DateTime(2022, 9, 1),
 
 

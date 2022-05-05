@@ -19,5 +19,15 @@ namespace Secretary
             var ListPerson = persister.GetNameTacher();
             return ListPerson;
         }
+
+        public IEnumerable<Person> StampaLePersone()
+        {
+            var persister = new RequestToSecretary();
+            var ListPerson = persister.GetAllPerson();
+            return ListPerson;
+        }
+
+
+      
     }
 }

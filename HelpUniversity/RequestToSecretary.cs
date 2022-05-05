@@ -67,8 +67,40 @@ namespace Secretary
 
 
                     IdTeacher = Convert.ToInt32(reader["IdTeacher"]),
-                    MatricolaTeacher = Convert.ToInt32(reader["Matricola"]),
+                    MatricolaTeacher = reader["Matricola"].ToString(),
                     DataAssunzione = Convert.ToDateTime(reader["DataAssunzione"])
+
+
+                };
+            }
+
+        }
+
+        public IEnumerable<Person> GetAllPerson()
+        {
+            var sql = @"
+             SELECT p.Id,p.Name,p.Surname,p.Birthday,p.Address,p.Gender
+            FROM Person p ";
+
+
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            using var command = new SqlCommand(sql,connection);
+            // command.Parameters.AddWithValue("@Surname", surname);
+            var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                yield return new Person
+                {
+                    IdPerson = Convert.ToInt32(reader["Id"]),
+                    Name = reader["Name"].ToString(),
+                    Surname = reader["Surname"].ToString(),
+                    Birthday = Convert.ToDateTime(reader["Birthday"]),
+                    Gender = reader["Gender"].ToString(),
+                    Address = reader["Address"].ToString(),
+
+
+
 
 
                 };
