@@ -12,5 +12,12 @@ namespace Secretary
             var ListPerson = persister.GetPeople(cognome);
             return ListPerson;
         }
+
+        public IEnumerable<Person> GetTeacher()
+        {
+            var persister = new RequestToSecretary();
+            var ListPerson = persister.GetNameTacher();
+            return ListPerson;
+        }
     }
 }

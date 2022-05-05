@@ -39,9 +39,41 @@ namespace Secretary
                 };
             }
 
-            
+         }
 
-        
+        public IEnumerable<Person> GetNameTacher()
+        {
+            var sql = @"
+             SELECT p.Id,p.Name,p.Surname,p.Birthday,p.Address,p.Gender,t.IdTeacher,t.Matricola,t.DataAssunzione
+            FROM Teacher t
+             JOIN Person p  ON t.IdPerson=p.Id ";
+ 
+
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+           using var command = new SqlCommand(sql, connection);
+           // command.Parameters.AddWithValue("@Surname", surname);
+            var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                yield return new Teacher
+                {
+                    IdPerson = Convert.ToInt32(reader["Id"]),
+                    Name = reader["Name"].ToString(),
+                    Surname = reader["Surname"].ToString(),
+                    Birthday = Convert.ToDateTime(reader["Birthday"]),
+                    Gender = reader["Gender"].ToString(),
+                    Address = reader["Address"].ToString(),
+
+
+                    IdTeacher = Convert.ToInt32(reader["IdTeacher"]),
+                    MatricolaTeacher = Convert.ToInt32(reader["Matricola"]),
+                    DataAssunzione = Convert.ToDateTime(reader["DataAssunzione"])
+
+
+                };
+            }
+
         }
 
     }

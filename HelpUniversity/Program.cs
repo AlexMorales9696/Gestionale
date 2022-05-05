@@ -2,27 +2,42 @@
 
 Console.WriteLine("hello");
 //////////////////////////////////////////////////////////
-/* 4 persone inserite nel DB
+/* 6  persone inserite nel DB però persona id= 1 è stata cancellato dal db
 
 var person1 = new handlerPerson();
 person1.InserisciUnaPersona1();
 
+person1.CancellaUnaPersonaId(1)
+
 var person2 = new handlerPerson();
-person1.InserisciUnaPersona2();
+person2.InserisciUnaPersona2();
 
 var person3 = new handlerPerson();
-person3.InserisciUnaPersona1();
+person3.InserisciUnaPersona3();
 
 var person4 = new handlerPerson();
-person4.InserisciUnaPersona4();*/
+person4.InserisciUnaPersona4();
+
+var person5 = new handlerPerson();
+person5.InserisciUnaPersona5();
+
+var person6 = new handlerPerson();
+person6.InserisciUnaPersona6(); */
 
 //////////////////////////////////////////////////////
 /* prensenti nel DB 2 TEACHER
+ 
 var Teacher1 = new handlerTeacher();
-Teacher1.InserisciTeacher2();  */
+Teacher1.InserisciTeacher1(); 
+
+var Teacher2 = new handlerTeacher();
+Teacher2.InserisciTeacher2(); */
 
 /////////////////////////////////////////////////
 /* 5 STUDENTI  PRESENTI NEL DB 
+
+var student1 = new hadlerStudent();
+student1.InserisciStudent1();
 
 var student2 = new hadlerStudent();
 student2.InserisciStudent2();
@@ -39,6 +54,9 @@ student5.InserisciStudent5(); */
 //////////////////////////////////////////////////////////
 
 /* INSERITI NEL DB 5 SUBJECT
+ 
+var subject1=new hanlerSubject();
+subject1.InserireSubject1();
 
 var subject2=new hanlerSubject();
 subject2.InserireSubject2();
@@ -55,8 +73,8 @@ subject5.InserireSubject5();*/
 //////////////////////////////////////////////////////
 
 //AGGIUNTI  5 LESSON NEL DB
-/*var lesson = new handlerLesson();
-lesson.AggiugiLesson();
+/*var lesson1 = new handlerLesson();
+lesson1.AggiugiLesson1();
 
 var lesson2 = new handlerLesson();
 lesson2.AggiugiLesson2();
@@ -71,6 +89,8 @@ var lesson5 = new handlerLesson();
 lesson5.AggiugiLesson5();*/
 ////////////////////////////////////////////////////////////////////
 /* AGGIUNTI AL DB 3 CLASS 
+ 
+ 
 var class1 = new handlerClass();
 class1.AggiugiClass1();
 
@@ -116,15 +136,26 @@ examdetails4.aggiugniExamDetails4();
 var examdetails5 = new handlerExamDetails();
 examdetails5.aggiugniExamDetails5();*/
 
+
+
 var handler = new handlerRequestToSecretary();
-
 var personEnumerable = handler.GetPersone("rossi");
-
-
 foreach (var item in personEnumerable)
 {
     Console.WriteLine($"{item.Name} {item.Surname} ");
 }
+
+Console.WriteLine("******************************************************************");
+Console.WriteLine("Ecco i nomi dei Teacher");
+
+var handler1 = new handlerRequestToSecretary();
+var personEnumerable1 = handler1.GetTeacher();
+foreach (var item in personEnumerable1)
+{
+    Console.WriteLine($"{item.Name} {item.Surname} ");
+}
+
+
 
 
 

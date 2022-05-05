@@ -11,7 +11,7 @@ namespace Secretary
     {
         private readonly string connectionString = "Server=ACADEMYNETPD09\\SQLEXPRESS;Database=Gestionale;Trusted_Connection=True;";
 
-        public bool InserisciTeacher()
+        public bool InserisciTeacher1()
         {
             var teacher = new Teacher
             {
