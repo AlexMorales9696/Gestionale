@@ -169,10 +169,3 @@ foreach (var item in teachers)
 {
     Console.WriteLine($"{item.Name} {item.Surname} ");
 }
-
-
-
-
-
-
-

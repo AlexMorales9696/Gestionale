@@ -41,7 +41,7 @@ namespace Secretary
 
          }
 
-        public IEnumerable<Person> GetNameTacher()
+        public IEnumerable<Teacher> GetTachers()
         {
             var sql = @"
              SELECT p.Id,p.Name,p.Surname,p.Birthday,p.Address,p.Gender,t.IdTeacher,t.Matricola,t.DataAssunzione
@@ -52,7 +52,6 @@ namespace Secretary
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
            using var command = new SqlCommand(sql, connection);
-           // command.Parameters.AddWithValue("@Surname", surname);
             var reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -76,17 +75,15 @@ namespace Secretary
 
         }
 
-        public IEnumerable<Person> GetAllPerson()
+        public IEnumerable<Person> GetPeople()
         {
             var sql = @"
              SELECT p.Id,p.Name,p.Surname,p.Birthday,p.Address,p.Gender
             FROM Person p ";
 
-
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql,connection);
-            // command.Parameters.AddWithValue("@Surname", surname);
             var reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -98,11 +95,6 @@ namespace Secretary
                     Birthday = Convert.ToDateTime(reader["Birthday"]),
                     Gender = reader["Gender"].ToString(),
                     Address = reader["Address"].ToString(),
-
-
-
-
-
                 };
             }
 

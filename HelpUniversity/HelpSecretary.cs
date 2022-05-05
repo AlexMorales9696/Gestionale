@@ -8,13 +8,13 @@ namespace Secretary
     {
         private readonly string
         ConnectionString;
-    public HelpSecretary(string connectionString)
-    {
+        public HelpSecretary(string connectionString)
+        {
             ConnectionString = connectionString;
         }
 
-    public bool AddPerson(Person person)
-    {
+        public bool AddPerson(Person person)
+        {
             var sql = @"
                    INSERT INTO [dbo].[Person]
             ([Name]
@@ -42,11 +42,6 @@ namespace Secretary
             return command.ExecuteNonQuery() > 0;
         }
 
-        internal object GetPeople(string cognome)
-        {
-            throw new NotImplementedException();
-        }
-
         public bool DeletePerona(int idperson)
 
         {
@@ -55,7 +50,7 @@ namespace Secretary
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@Id", 1);
+            command.Parameters.AddWithValue("@Id", idperson);
             return command.ExecuteNonQuery() > 0;
         }
 
@@ -76,16 +71,16 @@ namespace Secretary
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@IdPerson",teacher.IdPerson);
+            command.Parameters.AddWithValue("@IdPerson", teacher.IdPerson);
             command.Parameters.AddWithValue("@Matricola", teacher.MatricolaTeacher);
-            command.Parameters.AddWithValue("@DataAssunzione", teacher .DataAssunzione);
-            
+            command.Parameters.AddWithValue("@DataAssunzione", teacher.DataAssunzione);
+
 
             return command.ExecuteNonQuery() > 0;
         }
         public bool AddStudent(Student student)
-         {
-             var sql = @"
+        {
+            var sql = @"
                      INSERT INTO[dbo].[Student]
              ([IdPerson]
             ,[MatricolaStudent]
@@ -97,28 +92,26 @@ namespace Secretary
             ,@DataIscrizione)";
 
 
-             using var connection = new SqlConnection(ConnectionString);
-             connection.Open();
-             using var command = new SqlCommand(sql, connection);
-             command.Parameters.AddWithValue("@IdPerson",student.IdPerson);
-             command.Parameters.AddWithValue("@MatricolaStudent", student.MatricolaStudent);
-             command.Parameters.AddWithValue("@DataIscrizione", student.DataIscrizione);
+            using var connection = new SqlConnection(ConnectionString);
+            connection.Open();
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@IdPerson", student.IdPerson);
+            command.Parameters.AddWithValue("@MatricolaStudent", student.MatricolaStudent);
+            command.Parameters.AddWithValue("@DataIscrizione", student.DataIscrizione);
 
 
-             return command.ExecuteNonQuery() > 0;
-         }
+            return command.ExecuteNonQuery() > 0;
+        }
 
         public bool AddLesson(Lesson lesson)
         {
             var sql = @"
                      INSERT INTO[dbo].[Lessons]
-            ([IdTeacher]
-             ,[IdSubject])
-           
-           
-        VALUES
-           (@IdTeacher
-           ,@IdSubject)";
+                    ([IdTeacher]
+                    ,[IdSubject])
+                    VALUES
+                    (@IdTeacher
+                    ,@IdSubject)";
 
 
             using var connection = new SqlConnection(ConnectionString);
@@ -126,14 +119,11 @@ namespace Secretary
             using var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@IdTeacher", lesson.IdTeacher);
             command.Parameters.AddWithValue("@IdSubject", lesson.IdSubject);
-
-
-
             return command.ExecuteNonQuery() > 0;
         }
 
 
-        public bool AddClass(UniClass class1)
+        public bool AddClass(UniClass uniClass)
         {
             var sql = @"
                      INSERT INTO[dbo].[Class]
@@ -143,16 +133,12 @@ namespace Secretary
         VALUES
            (@IdStudent
            ,@IdLesson)";
-           
 
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@IdStudent", class1.IdStudent);
-            command.Parameters.AddWithValue("@IdLesson", class1.IdLess);
-           
-
-
+            command.Parameters.AddWithValue("@IdStudent", uniClass.IdStudent);
+            command.Parameters.AddWithValue("@IdLesson", uniClass.IdLess);
             return command.ExecuteNonQuery() > 0;
         }
 
@@ -178,7 +164,7 @@ namespace Secretary
             command.Parameters.AddWithValue("@Description", subject.Description);
             command.Parameters.AddWithValue("@Credits", subject.Crediti);
             command.Parameters.AddWithValue("@Hours", subject.Hours);
-           
+
 
 
 
@@ -199,7 +185,7 @@ namespace Secretary
            (@IdTeacher
            ,@Date
            ,@IdSubject)";
-           
+
 
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
@@ -207,11 +193,6 @@ namespace Secretary
             command.Parameters.AddWithValue("@IdTeacher", exam.Idteacher);
             command.Parameters.AddWithValue("@Date", exam.DataExam);
             command.Parameters.AddWithValue("@IdSubject", exam.Idsubject);
-           
-
-
-
-
 
             return command.ExecuteNonQuery() > 0;
         }
@@ -227,18 +208,13 @@ namespace Secretary
         VALUES
            (@IdExam
            ,@IdStudent)";
-       
+
 
             using var connection = new SqlConnection(ConnectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
             command.Parameters.AddWithValue("@IdExam", examdetails.Idexam);
             command.Parameters.AddWithValue("@IdStudent", examdetails.IdStudent);
-
-
-
-
-
 
             return command.ExecuteNonQuery() > 0;
         }

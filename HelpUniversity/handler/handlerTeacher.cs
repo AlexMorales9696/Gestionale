@@ -1,4 +1,5 @@
 ﻿using People;
+using University;
 
 namespace Secretary
 {

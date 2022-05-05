@@ -1,14 +1,9 @@
-﻿
-
-namespace University
+﻿namespace University
 {
-    public class Exam
+    public class Exam : ExamItem
     {
-        public int Idexam { get; set; }
         public int Idteacher { get; set; }
-        public int Idsubject {get; set;}
+        public int Idsubject { get; set; }
         public DateTime DataExam { get; set; }
-
-       
-}
+    }
 }

@@ -16,14 +16,14 @@ namespace Secretary
         public IEnumerable<Person> GetTeacher()
         {
             var persister = new RequestToSecretary();
-            var ListPerson = persister.GetNameTacher();
+            var ListPerson = persister.GetTachers();
             return ListPerson;
         }
 
         public IEnumerable<Person> StampaLePersone()
         {
             var persister = new RequestToSecretary();
-            var ListPerson = persister.GetAllPerson();
+            var ListPerson = persister.GetPeople();
             return ListPerson;
         }
 
